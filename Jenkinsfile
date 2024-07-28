@@ -70,7 +70,7 @@ pipeline {
         }
         stage('Push to GitHub') {
             steps {
-                withCredentials([string(credentialsId: GITHUB_CREDENTIALS_ID, variable: 'GITHUB_TOKEN')]) {
+                withCredentials([string(credentialsId: GITHUB_CREDENTIALS_ID, variable: 'github-token')]) {
                     sh '''
                    
                     git config user.name "mabd117"
