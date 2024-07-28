@@ -6,7 +6,7 @@ pipeline {
         DOCKERHUB_NAMESPACE = 'mabd117'
         BACKEND_IMAGE = "${DOCKERHUB_NAMESPACE}/hotel-backend"
         FRONTEND_IMAGE = "${DOCKERHUB_NAMESPACE}/hotel-frontend"
-        KUBECONFIG_CREDENTIALS_ID = 'kubeconfig-credentials-id'
+        KUBECONFIG_CREDENTIALS_ID = 'k8s'
         GITHUB_CREDENTIALS_ID = 'github-token'
         GIT_REPO = 'https://github.com/mabd117/hotel-management-system.git'
     }
@@ -72,8 +72,8 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: GITHUB_CREDENTIALS_ID, variable: 'GITHUB_TOKEN')]) {
                     sh '''
-                    git config user.email "your-email@example.com"
-                    git config user.name "your-name"
+                   
+                    git config user.name "mabd117"
                     git remote set-url origin https://your-github-token@github.com/mabd117/hotel-management-system.git
                     git add .
                     git commit -m "Automated commit"
