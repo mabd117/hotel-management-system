@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_CREDENTIALS_ID = 'dockerhub-credentials-id'
+        DOCKER_CREDENTIALS_ID = 'docker-hub'
         DOCKERHUB_NAMESPACE = 'mabd117'
         BACKEND_IMAGE = "${DOCKERHUB_NAMESPACE}/hotel-backend"
         FRONTEND_IMAGE = "${DOCKERHUB_NAMESPACE}/hotel-frontend"
