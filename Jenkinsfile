@@ -68,20 +68,7 @@ pipeline {
                 }
             }
         }
-        stage('Push to GitHub') {
-            steps {
-                withCredentials([string(credentialsId: GITHUB_CREDENTIALS_ID, variable: 'github-token')]) {
-                    sh '''
-                   
-                    git config user.name "mabd117"
-                    git remote set-url origin https://your-github-token@github.com/mabd117/hotel-management-system.git
-                    git add .
-                    git commit -m "Automated commit"
-                    git push origin main
-                    '''
-                }
-            }
-        }
+        
     }
 }
 
